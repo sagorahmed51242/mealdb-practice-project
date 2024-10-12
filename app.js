@@ -17,6 +17,9 @@ const loadMeal = async (searchText) => {
 const displayMeal = (isAll, data) => {
     const meal_container = document.getElementById("food_container");
     meal_container.innerHTML = "";
+    document.getElementById("show_all_button").classList.add("hidden");
+
+    
 
     if(data.length < 6){
         document.getElementById("show_all_button").classList.add("hidden");
