@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" style="scroll-behavior: smooth;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.13/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Meaddb Project</title>
+</head>
+<body>
+
+
+<!-- Header section starts from here -->
+<header>
+
+    <!-- Nav bar section starts from here -->
+    <nav class="container lg:px-22 px-5 md:px-0 mx-auto flex  justify-between items-center py-4 md:py-7">
+        <div class="logo border-2 p-1 border-dashed border-gray-300"><img src="images/Tasty_HUT.png" alt="this is the log"></div>
+        <div class="logo"><button class="bg-[#FFC107] font-bold md:text-xl px-3 md:px-5 py-2 md:py-3">Sign Up</button></div>
+    </nav>
+    <!-- Nav bar section ends here -->
+
+    <!-- Hero Section starts from here -->
+     <section class="hero bg-[url('./images/banner_1.png')] h-[300px] md:h-[450px] lg:h-[650px] w-full relative">
+        <div class="bg-black opacity-60 top-0 left-0 w-full h-full"></div>
+        <div class="hero_container px-5 md:px-0 text-center w-[80%]  md:w-[70%] lg:max-w-[650px] absolute">
+            <div>
+                <h1 class="text-white font-bold text-3xl md:text-5xl lg:text-6xl">Taste Our Delicious <br> Best Food</h1>
+                <p class="text-gray-300 py-3 md:py-5 text-sm lg:text-lg">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti, quaerat quas facere cupiditate
+                    delectus optio enim nesciunt harum adipisci laboriosam.</p>
+            </div>
+            <div class="flex">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                    class="h-5 w-5 absolute mt-2 md:mt-3 ml-2 opacity-50">
+                    <path fill-rule="evenodd"
+                        d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z"
+                        clip-rule="evenodd" />
+                </svg>
+                <input id="search_text" type="text" class="w-full py-1 md:py-2 pl-8 pr-3 focus:outline-none" placeholder="Search any food" />
+                <button onclick="searchMeal()" class="text-xl font-bold bg-[#FFC107] py-1 md:py-2 px-3"><a
+                        href="#food-container">Search</a></button>
+            </div>
+
+        </div>
+     </section>
+    <!-- Hero Section ends here -->
+
+</header>
+<!-- Header section ends here -->
+
+
+
+<!-- main section starts from here -->
+<main>
+
+    <!-- Category section starts from here -->
+
+    <div class="container mx-auto py-2 md:py-5 lg:py-10">
+        <div class="container_title text-center">
+            <h1 class="text-2xl font-semibold text-[#100F0F] pb-3 md:pb-6 lg:pb-10">Categories</h1>
+        </div>
+        <div class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-5" id="category_container"></div>
+    </div>
+
+    <!-- Category section ends here -->
+
+
+
+    <div class="container mx-auto text-center py-10 md:py-20 lg:py-28" id="food-container">
+        <div class="container_title">
+            <h1 class="text-4xl font-semibold text-[#100F0F] pb-3 md:pb-6 lg:pb-10">Your Favorite Food</h1>
+        </div>
+        <div class="filter flex gap-5 justify-center items-center pb-10">
+            <button class="bg-[#FFC107] rounded-lg font-bold text-xl py-2 px-3">Filter by First letter</button>
+            <button class="bg-[#FFC107] rounded-lg font-bold text-xl py-2 px-3">Filter by Area</button>
+        </div>
+        <div class="food_container grid grid-cols-1 md:grid-cols-2 gap-5" id="food_container"></div>
+        <div class="show_all_button pt-5 md:pt-10 lg:pt-20">
+            <button  id="show_all_button" class="bg-[#FFC107] font-bold text-xl py-2 px-3 rounded-md">Show All</button>
+            <button  id="go_top" class="hidden bg-[#FFC107] font-bold text-xl py-2 px-3 rounded-md">Go Top</button>
+        </div>
+    </div>
+</main>
+<!-- main section ends here -->
+
+
+
+
+
+
+
+<!-- Modal starts from here -->
+<div class="hidden" id="modal">
+    <div class="fixed top-0 left-0 w-full h-full bg-[#00000052] flex justify-center items-center">
+        <div class="absolute w-[550px] h-[600px] overflow-scroll z-50 bg-white p-5 rounded-lg">
+            <div class="modal_content" id="modal_content"></div>
+            <div class="text-right"><button class="bg-[#DC3545] font-bold text-xl py-2 px-3 rounded-md"
+                    onclick="closeModal()">Close</button></div>
+        </div>
+    </div>
+</div>
+ <!-- Modal ends here -->
+
+
+
+
+
+
+
+
+<!-- footer section starts from here -->
+<footer class="bg-[#FFC1070D] w-[100%]">
+    <div class="container mx-auto lg:py-28 md:py-20 py-10 px-5 md:px-0">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-5 lg:gap-0">
+            <div>
+                <div class="md:mb-7 mb-3">
+                    <h3 class="text-xl md:text-2xl font-bold text-[#403F3F]">Section</h3>
+                </div>
+                <div class="flex flex-col gap-2 md:text-xl">
+                    <a href="#">Home</a>
+                    <a href="#">Features</a>
+                    <a href="#">Pricing</a>
+                    <a href="#">FAQs</a>
+                    <a href="#">About</a>
+                </div>
+            </div>
+            <div class="lg:-ml-10">
+                <div class="md:mb-7 mb-3">
+                    <h3 class="text-xl md:text-2xl font-bold text-[#403F3F]">Services</h3>
+                </div>
+                <div class="flex flex-col gap-2 md:text-xl">
+                    <a href="#">UI UX Design</a>
+                    <a href="#">Product Design</a>
+                    <a href="#">Back End Developer</a>
+                    <a href="#">Front End Developer</a>
+                </div>
+            </div>
+            <div>
+                <div class="md:mb-7 mb-3">
+                    <h3 class="text-xl md:text-2xl font-bold text-[#403F3F]">Resources</h3>
+                </div>
+                <div class="flex flex-col gap-2 md:text-xl">
+                    <a href="#">FAQ</a>
+                    <a href="#">Support</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+            <div class="lg:col-span-2">
+                <div class="md:mb-7 mb-3">
+                    <h3 class="text-xl md:text-2xl font-bold text-[#403F3F]">Subscribe to our newsletter</h3>
+                </div>
+                <div class="flex flex-col gap-2 md:text-xl">
+                    <p class="pr-5 lg:pr-1">There are many variations of passages of  available, but the majority have suffered</p>
+                    <div class="flex">
+                        <input type="email" class="border px-3 py-2 md:px-5 md:py-4 bg-[#FFC1070D]" name="email" id="email"
+                            placeholder="Email Address">
+                        <input type="submit" class="bg-[#FFC107] font-bold md:text-xl px-3 py-2 md:px-5 md:py-4" value="Subscribe">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- footer section ends here -->
+
+<script src="app.js"></script>
+</body>
+</html>
