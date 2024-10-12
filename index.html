@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light" style="scroll-behavior: smooth;">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -66,16 +66,58 @@
     <!-- Category section ends here -->
 
 
-
-    <div class="container mx-auto text-center py-10 md:py-20 lg:py-28" id="food-container">
+    <!-- Meal showing container -->
+    <div class="container mx-auto text-center pt-5 pb-10 md:pb-20 lg:pb-28" id="food-container">
         <div class="container_title">
             <h1 class="text-4xl font-semibold text-[#100F0F] pb-3 md:pb-6 lg:pb-10">Your Favorite Food</h1>
         </div>
-        <div class="filter flex gap-5 justify-center items-center pb-10">
-            <button class="bg-[#FFC107] rounded-lg font-bold text-xl py-2 px-3">Filter by First letter</button>
-            <button class="bg-[#FFC107] rounded-lg font-bold text-xl py-2 px-3">Filter by Area</button>
+
+        <!-- Filter Button Container -->
+        <div class="filter flex gap-5 justify-center items-center pb-10" id="filter_container">
+            <button class="bg-[#FFC107] rounded-lg font-bold text-xl py-2 px-3" id="filter_by_letter">Filter by First letter</button>
+            <button class="bg-[#FFC107] rounded-lg font-bold text-xl py-2 px-3" id="filter_by_area">Filter by Area</button>
         </div>
+
+        <!-- Letter Container -->
+        <div class="filter_content  pb-10 hidden gap-5 justify-center items-center  p-5" id="letter_container">
+            <button class="text-xl font-semibold filter_by_letter italic">A</button>
+            <button class="text-xl font-semibold filter_by_letter italic">B</button>
+            <button class="text-xl font-semibold filter_by_letter italic">C</button>
+            <button class="text-xl font-semibold filter_by_letter italic">D</button>
+            <button class="text-xl font-semibold filter_by_letter italic">E</button>
+            <button class="text-xl font-semibold filter_by_letter italic">F</button>
+            <button class="text-xl font-semibold filter_by_letter italic">G</button>
+            <button class="text-xl font-semibold filter_by_letter italic">H</button>
+            <button class="text-xl font-semibold filter_by_letter italic">I</button>
+            <button class="text-xl font-semibold filter_by_letter italic">J</button>
+            <button class="text-xl font-semibold filter_by_letter italic">K</button>
+            <button class="text-xl font-semibold filter_by_letter italic">J</button>
+            <button class="text-xl font-semibold filter_by_letter italic">L</button>
+            <button class="text-xl font-semibold filter_by_letter italic">M</button>
+            <button class="text-xl font-semibold filter_by_letter italic">N</button>
+            <button class="text-xl font-semibold filter_by_letter italic">O</button>
+            <button class="text-xl font-semibold filter_by_letter italic">P</button>
+            <button class="text-xl font-semibold filter_by_letter italic">Q</button>
+            <button class="text-xl font-semibold filter_by_letter italic">R</button>
+            <button class="text-xl font-semibold filter_by_letter italic">S</button>
+            <button class="text-xl font-semibold filter_by_letter italic">T</button>
+            <button class="text-xl font-semibold filter_by_letter italic">U</button>
+            <button class="text-xl font-semibold filter_by_letter italic">V</button>
+            <button class="text-xl font-semibold filter_by_letter italic">W</button>
+            <button class="text-xl font-semibold filter_by_letter italic">X</button>
+            <button class="text-xl font-semibold filter_by_letter italic">Y</button>
+            <button class="text-xl font-semibold filter_by_letter italic">Z</button>
+        </div>
+
+        <!-- Area names Container -->
+        <div class="filter-by_Area pb-10 hidden grid-cols-4 md:grid-cols-8 lg:grid-cols-12 gap-5 justify-center items-center" id="area_container"></div>
+
+
+
+        <!-- Meal container -->
         <div class="food_container grid grid-cols-1 md:grid-cols-2 gap-5" id="food_container"></div>
+
+        <!-- Show all and got top button -->
         <div class="show_all_button pt-5 md:pt-10 lg:pt-20">
             <button  id="show_all_button" class="bg-[#FFC107] font-bold text-xl py-2 px-3 rounded-md">Show All</button>
             <button  id="go_top" class="hidden bg-[#FFC107] font-bold text-xl py-2 px-3 rounded-md">Go Top</button>
