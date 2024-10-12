@@ -19,7 +19,16 @@ const displayMeal = (isAll, data) => {
     meal_container.innerHTML = "";
     document.getElementById("show_all_button").classList.add("hidden");
 
-    
+    if(!data) {
+        meal_container.classList.remove("md:grid-cols-2");
+        const div = document.createElement("div");
+        div.innerHTML = `
+        <h1 class="text-2xl font-bold text-red-500">Opps! There is no Meal Found</h1>
+        `;
+        meal_container.appendChild(div);
+    }
+
+
 
     if(data.length < 6){
         document.getElementById("show_all_button").classList.add("hidden");
@@ -38,6 +47,7 @@ const displayMeal = (isAll, data) => {
 
 
     meals.forEach((meal) => {
+        meal_container.classList.add("md:grid-cols-2");
         const {strMealThumb, strMeal, idMeal} = meal;
         const div = document.createElement("div");
         div.innerHTML = `
